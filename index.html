@@ -47,19 +47,27 @@
             justify-content: center;
         }
 
-        .hero-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: #F4F1DE;
-            margin: 0 auto 30px;
-            border: 5px solid #E07A5F;
+        .profile-wrapper {
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 48px;
-            color: #3D405B;
-            font-weight: bold;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 160px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #E07A5F;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .hero h1 {
@@ -425,35 +433,11 @@
 
 <!-- HOME -->
 <div id="home" class="section active hero">
-<div class="profile-wrapper">
-  <div class="profile-pic">
-    <img src="https://benwatson.netlify.app/Ben%20Watson%20compressed.jpg" alt="Ben Watson">
-  </div>
-</div>
-
-<style>
-  .profile-wrapper{
-    display: flex;
-    justify-content: centre;
-    align-items: centre;
-  }
-
-  .profile-pic{
-    width: 160px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid #E07A5F;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  }
-
-  .profile-pic img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-</style>
+    <div class="profile-wrapper">
+        <div class="profile-pic">
+            <img src="https://benwatson.netlify.app/Ben%20Watson%20compressed.jpg" alt="Ben Watson">
+        </div>
+    </div>
 
     <h1>Benjamin Watson</h1>
     <p class="tagline">Process Analyst | Automation Consultant / Developer</p>
@@ -477,7 +461,7 @@
         <div class="nav-button" onclick="showSection('freelance')">
             <div class="icon">💼</div>
             <h3>Freelance Projects</h3>
-            <p>Automation consulting / developmentfor SMEs</p>
+            <p>Automation consulting / development for SMEs</p>
         </div>
         <div class="nav-button" onclick="showSection('contact')">
             <div class="icon">📧</div>
