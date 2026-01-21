@@ -425,18 +425,26 @@
 
 <!-- HOME -->
 <div id="home" class="section active hero">
-    <div class="profile-pic">
-  <img src="https://benwatson.netlify.app/Ben%20Watson%20compressed.jpg" alt="Ben Watson">
+<div class="profile-wrapper">
+  <div class="profile-pic">
+    <img src="https://benwatson.netlify.app/Ben%20Watson%20compressed.jpg" alt="Ben Watson">
+  </div>
 </div>
 
 <style>
+  .profile-wrapper{
+    display: flex;
+    justify-content: centre;
+    align-items: centre;
+  }
+
   .profile-pic{
-    width: 160px;              /* change size */
+    width: 160px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #E07A5F; /* optional */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* optional */
+    border: 4px solid #E07A5F;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   }
 
   .profile-pic img{
@@ -446,6 +454,7 @@
     display: block;
   }
 </style>
+
     <h1>Benjamin Watson</h1>
     <p class="tagline">Process Analyst | Automation Consultant / Developer</p>
 
