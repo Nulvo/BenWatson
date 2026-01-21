@@ -11,6 +11,10 @@
             box-sizing: border-box;
         }
         
+        html, body {
+            height: 100%;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #F4F1DE;
@@ -19,7 +23,7 @@
         
         .section {
             display: none;
-            min-height: 100vh;
+            /* min-height removed to avoid empty scroll space */
             padding: 40px 20px;
             opacity: 0;
             transform: translateY(20px);
@@ -41,7 +45,7 @@
             color: #F4F1DE;
             text-align: center;
             padding: 80px 40px;
-            min-height: 100vh;
+            min-height: 100vh; /* keep full-height only for the hero */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -470,10 +474,8 @@
             <button class="back-button" onclick="showSection('home')">← Back to Home</button>
             <div class="content-section">
                 <h2 class="section-title">Career Journey</h2>
-                
                 <div class="timeline">
                     <div class="timeline-line"></div>
-                    
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3>Customer Due Diligence Analyst</h3>
@@ -487,7 +489,6 @@
                         </div>
                         <div class="timeline-dot"></div>
                     </div>
-                    
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3>Senior CDD Analyst</h3>
@@ -501,7 +502,6 @@
                         </div>
                         <div class="timeline-dot"></div>
                     </div>
-                    
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3>Process Analyst - Mapping Specialist</h3>
@@ -515,7 +515,6 @@
                         </div>
                         <div class="timeline-dot"></div>
                     </div>
-                    
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3>Process Analyst</h3>
@@ -530,7 +529,6 @@
                         <div class="timeline-dot"></div>
                     </div>
                 </div>
-                
                 <div class="note">
                     <strong>Parallel Activity:</strong> Running freelance automation consultancy since January 2024, delivering process improvement solutions to SMEs.
                 </div>
@@ -544,12 +542,10 @@
             <button class="back-button" onclick="showSection('home')">← Back to Home</button>
             <div class="content-section">
                 <h2 class="section-title">AXA Health: DMAIC Case Study</h2>
-                
                 <div class="case-study-header">
                     <h2>Salesforce Migration & Claims Processing Optimisation</h2>
                     <p>Addressing processing inefficiencies affecting 300-400 personal advisors across UK and India</p>
                 </div>
-                
                 <div class="problem-solution">
                     <div class="box">
                         <h3>🎯 The Challenge</h3>
@@ -566,10 +562,8 @@
                         <p style="margin-top: 15px;"><strong>Outcome:</strong> Improved processing times, reduced errors, better customer experience</p>
                     </div>
                 </div>
-                
                 <h3 style="color: #3D405B; margin: 30px 0 20px 0;">DMAIC Methodology Applied</h3>
                 <p style="margin-bottom: 20px; color: #3D405B;">Hover over each phase to explore the approach</p>
-                
                 <div class="dmaic-container">
                     <div class="dmaic-phase">
                         <div class="icon">🎯</div>
@@ -597,7 +591,6 @@
                         <div class="dmaic-detail">Process governance, ownership assignment, monitoring plan</div>
                     </div>
                 </div>
-                
                 <div class="note">
                     <strong>Tools Used:</strong> ARIS (BPMN mapping), Databricks (data analysis), Azure & UIPath (automation), Lean tools (fishbone, multi-voting, various matrices)
                 </div>
@@ -611,7 +604,6 @@
             <button class="back-button" onclick="showSection('home')">← Back to Home</button>
             <div class="content-section">
                 <h2 class="section-title">Skills & Tools</h2>
-                
                 <div class="skills-grid">
                     <div class="skill-category">
                         <h3>Methodologies</h3>
@@ -624,7 +616,6 @@
                             <li>Workshop Facilitation</li>
                         </ul>
                     </div>
-                    
                     <div class="skill-category">
                         <h3>Process Tools</h3>
                         <ul>
@@ -636,7 +627,6 @@
                             <li>ServiceNow</li>
                         </ul>
                     </div>
-                    
                     <div class="skill-category">
                         <h3>Automation & Data</h3>
                         <ul>
@@ -650,7 +640,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div style="margin-top: 40px;">
                     <h3 style="color: #3D405B; margin-bottom: 20px;">Key Competencies</h3>
                     <div class="problem-solution">
@@ -684,11 +673,9 @@
             <button class="back-button" onclick="showSection('home')">← Back to Home</button>
             <div class="content-section">
                 <h2 class="section-title">Freelance Projects</h2>
-                
                 <p style="color: #3D405B; margin-bottom: 30px; font-size: 18px;">
                     Since January 2024, I've been providing process automation and improvement services to small and medium-sized businesses, helping them streamline operations and reduce manual workload.
                 </p>
-                
                 <div class="project-card">
                     <h3>Estate Agent Valuation Tracking System</h3>
                     <p style="color: #3D405B; margin-bottom: 15px;">
@@ -700,7 +687,6 @@
                     </p>
                     <div class="impact">💰 £15k FTE savings annually</div>
                 </div>
-                
                 <div class="project-card">
                     <h3>Cake Business Communication Automation</h3>
                     <p style="color: #3D405B; margin-bottom: 15px;">
@@ -712,7 +698,6 @@
                     </p>
                     <div class="impact">⏱️ Reduced inbox management time by 60%</div>
                 </div>
-                
                 <div class="note">
                     <strong>Approach:</strong> Discovery workshops to identify pain points → Solution design → Build & test → Handover & training
                 </div>
@@ -727,11 +712,9 @@
             <div class="content-section">
                 <div class="contact-section-content">
                     <h2 class="section-title">Get In Touch</h2>
-                    
                     <p style="color: #3D405B; font-size: 20px; margin-bottom: 30px;">
                         Currently seeking opportunities in process analysis, business change, and continuous improvement roles.
                     </p>
-                    
                     <div style="background: #F4F1DE; padding: 30px; border-radius: 8px; margin: 30px 0;">
                         <h3 style="color: #3D405B; margin-bottom: 20px;">What I'm Looking For</h3>
                         <ul style="color: #3D405B; text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8;">
@@ -742,13 +725,11 @@
                             <li>Culture of continuous improvement and innovation</li>
                         </ul>
                     </div>
-                    
                     <div class="contact-buttons">
                         <a href="mailto:bwtsn197@gmail.com" class="contact-btn">📧 Email Me</a>
                         <a href="https://linkedin.com" target="_blank" class="contact-btn">💼 LinkedIn Profile</a>
                         <a href="#" class="contact-btn">📄 Download CV</a>
                     </div>
-                    
                     <p style="color: #3D405B; margin-top: 40px; font-size: 16px;">
                         <strong>Location:</strong> London, UK | <strong>Phone:</strong> +44 7715 840576
                     </p>
@@ -758,14 +739,23 @@
     </div>
 
     <script>
+        function scrollToTopOfSection(sectionEl) {
+            // Works more reliably across browsers/iframes than scrollTo alone
+            sectionEl.scrollIntoView({ behavior: 'auto', block: 'start' });
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }
+
         function showSection(sectionId) {
             const currentSection = document.querySelector('.section.active');
             const nextSection = document.getElementById(sectionId);
-            
+
+            if (!nextSection || currentSection === nextSection) return;
+
             // Fade out current section
             currentSection.style.opacity = '0';
             currentSection.style.transform = 'translateY(-20px)';
-            
+
             setTimeout(() => {
                 // Hide all sections
                 const sections = document.querySelectorAll('.section');
@@ -774,21 +764,25 @@
                     section.style.opacity = '0';
                     section.style.transform = 'translateY(20px)';
                 });
-                
+
                 // Show selected section
                 nextSection.classList.add('active');
-                
-                // Scroll to top
-                window.scrollTo(0, 0);
-                
-                // Trigger fade in animation
-                setTimeout(() => {
-                    nextSection.style.opacity = '1';
-                    nextSection.style.transform = 'translateY(0)';
-                }, 50);
+
+                // Jump to the top of the newly shown section (robust)
+                // Run after layout has updated
+                requestAnimationFrame(() => {
+                    scrollToTopOfSection(nextSection);
+
+                    // Trigger fade in animation
+                    requestAnimationFrame(() => {
+                        nextSection.style.opacity = '1';
+                        nextSection.style.transform = 'translateY(0)';
+                    });
+                });
+
             }, 300);
         }
-        
+
         // Initialize first section
         document.addEventListener('DOMContentLoaded', () => {
             const homeSection = document.getElementById('home');
