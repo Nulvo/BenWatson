@@ -746,49 +746,41 @@
             document.body.scrollTop = 0;
         }
 
-        function showSection(sectionId) {
-            const currentSection = document.querySelector('.section.active');
-            const nextSection = document.getElementById(sectionId);
+        <script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        const nextSection = document.getElementById(sectionId);
 
-            if (!nextSection || currentSection === nextSection) return;
-
-            // Fade out current section
-            currentSection.style.opacity = '0';
-            currentSection.style.transform = 'translateY(-20px)';
-
-            setTimeout(() => {
-                // Hide all sections
-                const sections = document.querySelectorAll('.section');
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                    section.style.opacity = '0';
-                    section.style.transform = 'translateY(20px)';
-                });
-
-                // Show selected section
-                nextSection.classList.add('active');
-
-                // Jump to the top of the newly shown section (robust)
-                // Run after layout has updated
-                requestAnimationFrame(() => {
-                    scrollToTopOfSection(nextSection);
-
-                    // Trigger fade in animation
-                    requestAnimationFrame(() => {
-                        nextSection.style.opacity = '1';
-                        nextSection.style.transform = 'translateY(0)';
-                    });
-                });
-
-            }, 300);
-        }
-
-        // Initialize first section
-        document.addEventListener('DOMContentLoaded', () => {
-            const homeSection = document.getElementById('home');
-            homeSection.style.opacity = '1';
-            homeSection.style.transform = 'translateY(0)';
+        // Hide all sections immediately (no layout space left behind)
+        sections.forEach(section => {
+            section.classList.remove('active');
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.display = 'none';
         });
-    </script>
+
+        // Show the next section
+        nextSection.style.display = 'block';
+        nextSection.classList.add('active');
+
+        // Hard reset scroll position
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
+        // Animate the section in (only incoming section animates)
+        requestAnimationFrame(() => {
+            nextSection.style.opacity = '1';
+            nextSection.style.transform = 'translateY(0)';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const homeSection = document.getElementById('home');
+        homeSection.style.display = 'block';
+        homeSection.style.opacity = '1';
+        homeSection.style.transform = 'translateY(0)';
+    });
+</script>
+
 </body>
 </html>
