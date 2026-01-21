@@ -21,6 +21,9 @@
             display: none;
             min-height: 100vh;
             padding: 40px 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
         
         .section.active {
@@ -756,18 +759,42 @@
 
     <script>
         function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
+            const currentSection = document.querySelector('.section.active');
+            const nextSection = document.getElementById(sectionId);
             
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
+            // Fade out current section
+            currentSection.style.opacity = '0';
+            currentSection.style.transform = 'translateY(-20px)';
             
-            // Scroll to top
-            window.scrollTo(0, 0);
+            setTimeout(() => {
+                // Hide all sections
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(20px)';
+                });
+                
+                // Show selected section
+                nextSection.classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+                
+                // Trigger fade in animation
+                setTimeout(() => {
+                    nextSection.style.opacity = '1';
+                    nextSection.style.transform = 'translateY(0)';
+                }, 50);
+            }, 300);
         }
+        
+        // Initialize first section
+        document.addEventListener('DOMContentLoaded', () => {
+            const homeSection = document.getElementById('home');
+            homeSection.style.opacity = '1';
+            homeSection.style.transform = 'translateY(0)';
+        });
     </script>
 </body>
 </html>
